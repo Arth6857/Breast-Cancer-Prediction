@@ -1,0 +1,56 @@
+DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='logo.png') }}">
+</head>
+<body>
+    <header>
+        <a href="{{ url_for('home') }}" class="logo">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo">
+        </a>
+        <nav class="navbar">
+            <ul>
+                <li><a href="https://www.wibreastcancer.org/resources/breast-cancer-facts/" target="_blank">Facts</a></li>
+                <li><a target="_blank" href="{{ url_for('predict') }}">Predict Cancer</a></li>
+                <li><a target="_blank" href="https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data?">Dataset</a></li>
+                <li><a target="_blank" href="https://drive.google.com/file/d/1GHtF0qtSc2aw0eqN3IIaEcaKpuUpE2xV/view?usp=sharing">Report</a></li>
+
+            </ul>
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="content">
+            <h3>Machine Learning-Based Breast Cancer Prediction</h3>
+            <p>This application helps predict whether a tumor is benign or malignant based on input features.</p>
+        </div>
+        <div class="image">
+            <img src="{{ url_for('static', filename='home-image.jpeg') }}" alt="Breast Cancer Awareness">
+        </div>
+    </section>
+
+    <section class="about">
+        <div class="content_about">
+            <h3>Model Accuracy</h3>
+            <p><strong>Breast Cancer Prediction Accuracy:</strong> 99.12%</p>
+            <h3>What is Breast Cancer?</h3>
+            <p style="margin-left: 3.5rem;margin-right: 3.5rem;">Breast cancer is a disease in which cells in the breast grow out of control. It is one of the most common cancers among women worldwide.</p>
+            <h3>Common Symptoms</h3>
+            <ul>
+                <li>A lump or mass in the breast</li>
+                <li>Change in breast shape or size</li>
+                <li>Pain in the breast</li>
+                <li>Changes in the skin (dimpling, redness, scaling)</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Developed by Mayank , Nandini , Arth | Breast Cancer Prediction</p>
+    </footer>
+</body>
+</html>

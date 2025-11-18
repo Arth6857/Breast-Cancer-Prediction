@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breast Cancer Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Breast Cancer Prediction</h2>
+        <p>Upload a PDF report containing the 30 feature values to predict whether the tumor is benign or malignant.</p>
+
+        <form method="POST" action="/predict" enctype="multipart/form-data">
+            <label for="file">Upload PDF:</label>
+            <input type="file" name="file" accept="application/pdf" required>
+            <button type="submit">Predict</button>
+        </form>
+
+        {% if prediction %}
+            <div class="result">
+                <h3>Prediction: 
+                    <span class="{{ 'benign' if prediction == 'Benign' else 'malignant' }}">
+                        {{ prediction }} ({{ confidence|round(2) }}%)
+                    </span>
+                </h3>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
